@@ -562,13 +562,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
             é abrir novos caminhos.
         </h1>
 
-        <h2>
-            Julia Vitória
-        </h2>
+        <h2>Julia Vitória</h2>
 
         <p class="crp">
             Psicóloga | CRP 06/214582
         </p>
+        <div class="foto-mobile-principal">
+    <img src="images/Julia.jpeg" alt="Julia Vitória - Psicóloga">
+</div>
 
         <p class="descricao">
             Psicoterapia on-line pela abordagem
@@ -589,11 +590,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     </div>
 
 </section>
-
-<div class="fotos-mobile">
-    <img src="images/Julia.jpeg" alt="Julia Vitória">
-    <img src="images/Julia2.jpeg" alt="Julia Vitória">
-</div>
 
 <section class="sobre" id="sobre">
 
@@ -1441,7 +1437,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 /* =========================
    RESPONSIVIDADE - CELULAR
 ========================= */
-.fotos-mobile {
+
+.foto-mobile-principal {
     display: none;
 }
 @media (max-width: 600px) {
@@ -1453,19 +1450,25 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     top: 18px;
     right: 6%;
 }
-.fotos-mobile {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    width: 92%;
-    margin: 25px auto;
+.foto-mobile-principal {
+    display: block !important;
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
-.fotos-mobile img {
-    width: 100%;
-    height: 260px;
+.foto-mobile-principal img {
+    display: block !important;
+    width: 88%;
+    max-width: 380px;
+    height: auto !important;
+    margin: 0 auto;
+    border-radius: 28px;
     object-fit: cover;
-    border-radius: 20px;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* Esconde as imagens originais somente no celular */
