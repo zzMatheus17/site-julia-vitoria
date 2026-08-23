@@ -1470,11 +1470,31 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     visibility: visible !important;
     opacity: 1 !important;
 }
-
-/* Esconde as imagens originais somente no celular */
-.hero-imagem,
 .sobre-imagem {
-    display: none;
+    display: block !important;
+    width: 350px !important;
+    height: 350px !important;
+    background: red !important;
+    margin: 30px auto !important;
+}
+
+.sobre-imagem img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* No celular, esconde apenas a imagem original do topo */
+.hero-imagem {
+    display: none !important;
+}
+
+/* Mantém a imagem da seção Sobre visível */
+.sobre-imagem {
+    display: block !important;
 }
 .whatsapp-flutuante {
     right: 15px;
@@ -1556,7 +1576,7 @@ header nav.ativo {
 
     .sobre-imagem {
     width: 85%;
-    max-width: 300px;
+    max-width: 380px;
     height: 380px;
     margin: 0 auto 35px;
 }
