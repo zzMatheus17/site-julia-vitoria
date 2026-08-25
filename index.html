@@ -2,6 +2,15 @@
 <html lang="pt-BR">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-06B058S1NP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-06B058S1NP');
+</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -1659,6 +1668,7 @@ img {
     padding: 0 15px;
     box-sizing: border-box;
 }
+
 </style>
 </section>
 <section class="como-funciona">
@@ -2187,6 +2197,24 @@ perguntasFAQ.forEach(function(pergunta) {
 
     });
 
+});
+/* =========================
+   CLIQUES NO WHATSAPP
+========================= */
+
+const linksWhatsApp = document.querySelectorAll('a[href*="wa.me"]');
+
+linksWhatsApp.forEach(function(link) {
+    link.addEventListener("click", function() {
+
+        if (typeof gtag === "function") {
+            gtag("event", "clique_whatsapp", {
+                button_text: link.innerText.trim() || "WhatsApp",
+                link_url: link.href
+            });
+        }
+
+    });
 });
 
 </script>
