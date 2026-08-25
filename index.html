@@ -2202,19 +2202,21 @@ perguntasFAQ.forEach(function(pergunta) {
    CLIQUES NO WHATSAPP
 ========================= */
 
-const linksWhatsApp = document.querySelectorAll('a[href*="wa.me"]');
+document.addEventListener("click", function(event) {
 
-linksWhatsApp.forEach(function(link) {
-    link.addEventListener("click", function() {
+    const link = event.target.closest('a[href*="wa.me"]');
 
-        if (typeof gtag === "function") {
-            gtag("event", "clique_whatsapp", {
-                button_text: link.innerText.trim() || "WhatsApp",
-                link_url: link.href
-            });
-        }
+    if (!link) return;
 
-    });
+    console.log("Clique WhatsApp registrado!");
+
+    if (typeof gtag === "function") {
+        gtag("event", "clique_whatsapp", {
+            button_text: link.innerText.trim() || "WhatsApp",
+            link_url: link.href
+        });
+    }
+
 });
 
 </script>
