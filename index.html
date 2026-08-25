@@ -539,7 +539,8 @@ header nav a {
     <a
         href="https://www.instagram.com/psi.juliavitoria/"
         target="_blank"
-        aria-label="Instagram">
+        aria-label="Instagram"
+        class="instagram-track">
 
         <i class="fa-brands fa-instagram"></i>
 
@@ -2232,6 +2233,26 @@ linksTikTok.forEach(function(link) {
         if (typeof gtag === "function") {
             gtag("event", "clique_tiktok", {
                 button_text: "TikTok",
+                link_url: link.href
+            });
+        }
+
+    });
+
+});
+/* =========================
+   CLIQUES NO INSTAGRAM
+========================= */
+
+const linksInstagram = document.querySelectorAll(".instagram-track");
+
+linksInstagram.forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        if (typeof gtag === "function") {
+            gtag("event", "clique_instagram", {
+                button_text: "Instagram",
                 link_url: link.href
             });
         }
